@@ -37,15 +37,34 @@ const siteContent = {
   },
 };
 
+// Header
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-let nav = document.getElementsByTagName("nav");
-let cta = document.getElementsByClassName("cta");
+let nav = document.getElementsByTagName("nav")[0]["children"];
+for (let i = 0; i < nav.length; i++) {
+  nav[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
+}
+
+// Call-to-Action
+let h1 = document.querySelector("h1");
+h1.textContent = siteContent.cta.h1;
+
+
+
+// Update img src for cta img
 let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// Main Content
 
 let mainContent = document.getElementsByClassName("main-content");
+
+// Update img src for middle img
 let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
 let contact = document.getElementsByClassName("contact");
 let footer = document.getElementsByTagName("footer");
