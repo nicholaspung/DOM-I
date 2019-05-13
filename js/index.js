@@ -79,8 +79,45 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
+// H1
+siteContent.cta.h1 = "DOM\n is\n awesome";
+let h1 = document.querySelector("h1").innerText = siteContent.cta.h1;
+
+// Button
+let button = document.querySelector("button").textContent = siteContent.cta.button;
+
+// Main-Content H4
+let h4 = document.querySelectorAll("h4");
+h4[0].textContent = siteContent["main-content"]["features-h4"];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
+
+let topContent = document.querySelectorAll(".top-content .text-content p");
+topContent[0].textContent = siteContent["main-content"]["features-content"];
+topContent[1].textContent = siteContent["main-content"]["about-content"];
+
+let bottomContent = document.querySelectorAll(".bottom-content .text-content p");
+bottomContent[0].textContent = siteContent["main-content"]["services-content"];
+bottomContent[1].textContent = siteContent["main-content"]["product-content"];
+bottomContent[2].textContent = siteContent["main-content"]["vision-content"];
 
 
+// Contact
+h4[5].textContent = siteContent["contact"]["contact-h4"];
+
+let contact = document.getElementsByClassName("contact")[0];
+siteContent.contact.address = "123 Way 456 Street\n Somewhere, USA";
+
+contact.children[1].innerText = siteContent.contact.address;
+contact.children[2].textContent = siteContent.contact.phone;
+contact.children[3].textContent = siteContent.contact.email;
+
+// Footer
+let footer = document.getElementsByTagName("footer")[0];
+
+footer.textContent = siteContent.footer.copyright;
 
 // 1st attempt - couldn't get appendChild() and prepend() to work
 // let nav = document.getElementsByTagName("nav")[0];
