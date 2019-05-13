@@ -50,7 +50,9 @@ for (let i = 0; i < nav.length; i++) {
 
 // Call-to-Action
 let h1 = document.querySelector("h1");
-h1.textContent = siteContent.cta.h1;
+h1ContentUpdated = siteContent.cta.h1.indexOf(" ");
+
+h1.innerHTML = siteContent.cta.h1.replace(/\s/g, "<br>");
 
 let button = document.getElementsByTagName("button")[0];
 button.textContent = siteContent.cta.button;
@@ -91,10 +93,13 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 h4[5].textContent = siteContent["contact"]["contact-h4"];
 
 let contact = document.getElementsByClassName("contact")[0];
-contact.children[1].textContent = siteContent.contact.address;
+siteContent.contact.address = "123 Way 456 Street\n Somewhere, USA";
+
+contact.children[1].innerText = siteContent.contact.address;
 contact.children[2].textContent = siteContent.contact.phone;
 contact.children[3].textContent = siteContent.contact.email;
 
 // Footer
 let footer = document.getElementsByTagName("footer")[0];
+
 footer.textContent = siteContent.footer.copyright;
