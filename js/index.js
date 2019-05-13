@@ -61,11 +61,27 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 // Main Content
 let h4 = document.querySelectorAll("h4");
+
 h4[0].textContent = siteContent["main-content"]["features-h4"];
+let featuresContent = document.querySelector(".text-content p");
+featuresContent.textContent = siteContent["main-content"]["features-content"];
+
 h4[1].textContent = siteContent["main-content"]["about-h4"];
+let topContent = document.querySelectorAll(".top-content p");
+topContent[1].textContent = siteContent["main-content"]["about-content"];
+
 h4[2].textContent = siteContent["main-content"]["services-h4"];
+let servicesContent = document.querySelector(".bottom-content .text-content p");
+servicesContent.textContent = siteContent["main-content"]["services-content"];
+
+let bottomContent = document.querySelectorAll(".bottom-content p");
+
 h4[3].textContent = siteContent["main-content"]["product-h4"];
+bottomContent[1].textContent = siteContent["main-content"]["product-content"];
+
 h4[4].textContent = siteContent["main-content"]["vision-h4"];
+bottomContent[2].textContent = siteContent["main-content"]["vision-content"];
+
 
 // Update img src for middle img
 let middleImg = document.getElementById("middle-img");
@@ -75,4 +91,6 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 h4[5].textContent = siteContent["contact"]["contact-h4"];
 
 let contact = document.getElementsByClassName("contact");
+
+// Footer
 let footer = document.getElementsByTagName("footer");
