@@ -40,8 +40,7 @@ const siteContent = {
 // Header
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"]);
+let logo = document.getElementById("logo-img").setAttribute('src', siteContent["nav"]["img-src"]);
 
 let nav = document.querySelectorAll("a");
 
@@ -72,12 +71,10 @@ nav[0].parentNode.prepend(AHrefElement("bye", setColor));
 addNavContent(setColor);
 
 // Update img src for cta img
-let ctaImg = document.getElementById("cta-img");
-ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+let ctaImg = document.getElementById("cta-img").setAttribute('src', siteContent["cta"]["img-src"]);
 
 // Update img src for middle img
-let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+let middleImg = document.getElementById("middle-img").setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 // H1
 siteContent.cta.h1 = "DOM\n is\n awesome";
@@ -103,7 +100,6 @@ bottomContent[0].textContent = siteContent["main-content"]["services-content"];
 bottomContent[1].textContent = siteContent["main-content"]["product-content"];
 bottomContent[2].textContent = siteContent["main-content"]["vision-content"];
 
-
 // Contact
 h4[5].textContent = siteContent["contact"]["contact-h4"];
 
@@ -115,9 +111,7 @@ contact.children[2].textContent = siteContent.contact.phone;
 contact.children[3].textContent = siteContent.contact.email;
 
 // Footer
-let footer = document.getElementsByTagName("footer")[0];
-
-footer.textContent = siteContent.footer.copyright;
+let footer = document.getElementsByTagName("footer")[0].textContent = siteContent.footer.copyright;
 
 // 1st attempt - couldn't get appendChild() and prepend() to work
 // let nav = document.getElementsByTagName("nav")[0];
