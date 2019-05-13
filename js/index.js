@@ -60,14 +60,19 @@ let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 // Main Content
-let mainContent = document.getElementsByClassName("main-content")[0];
-let topContent = mainContent.children[0];
-let bottomContent = mainContent.children[2];
-
+let h4 = document.querySelectorAll("h4");
+h4[0].textContent = siteContent["main-content"]["features-h4"];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
 
 // Update img src for middle img
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// Contact
+h4[5].textContent = siteContent["contact"]["contact-h4"];
 
 let contact = document.getElementsByClassName("contact");
 let footer = document.getElementsByTagName("footer");
