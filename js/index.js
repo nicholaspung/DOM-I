@@ -45,23 +45,31 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 let nav = document.querySelectorAll("a");
 
-function addNavContent() {
+function addNavContent(setColor) {
   for (let i = 0; i < nav.length; i++) {
     nav[i].textContent = siteContent.nav[`nav-item-${i}`];
+    nav[i].style.color = setColor;
   }
 }
 
-function AHrefElement(insertText) {
+function AHrefElement(insertText, setColor) {
   let a = document.createElement('a');
   a.href = "#";
   a.textContent = insertText;
+  a.style.color = setColor;
   return a;
 }
 
-nav[0].parentNode.appendChild(AHrefElement("hello"));
-nav[0].parentNode.prepend(AHrefElement("bye"));
+// Sets color for Nav Elements
+let setColor = "green";
 
-addNavContent();
+// Append Child
+nav[0].parentNode.appendChild(AHrefElement("hello", setColor));
+
+// Prepend Child
+nav[0].parentNode.prepend(AHrefElement("bye", setColor));
+
+addNavContent(setColor);
 
 // Update img src for cta img
 let ctaImg = document.getElementById("cta-img");
@@ -70,6 +78,9 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 // Update img src for middle img
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+
+
 
 // 1st attempt - couldn't get appendChild() and prepend() to work
 // let nav = document.getElementsByTagName("nav")[0];
