@@ -51,13 +51,15 @@ function addNavContent() {
   }
 }
 
-function AHrefElement() {
+function AHrefElement(insertText) {
   let a = document.createElement('a');
   a.href = "#";
-  return a
+  a.textContent = insertText;
+  return a;
 }
 
-
+nav[0].parentNode.appendChild(AHrefElement("hello"));
+nav[0].parentNode.prepend(AHrefElement("bye"));
 
 addNavContent();
 
