@@ -52,15 +52,18 @@ for (let i = 0; i < nav.length; i++) {
 let h1 = document.querySelector("h1");
 h1.textContent = siteContent.cta.h1;
 
-
+let button = document.getElementsByTagName("button")[0];
+button.textContent = siteContent.cta.button;
 
 // Update img src for cta img
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 // Main Content
+let mainContent = document.getElementsByClassName("main-content")[0];
+let topContent = mainContent.children[0];
+let bottomContent = mainContent.children[2];
 
-let mainContent = document.getElementsByClassName("main-content");
 
 // Update img src for middle img
 let middleImg = document.getElementById("middle-img");
